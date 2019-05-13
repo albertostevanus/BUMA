@@ -7,6 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="shortcut icon" type="image/x-icon" href="/img/buma_logo.png" />
     <title>Employee CRUD</title>
 
     <!-- Scripts -->
@@ -28,6 +29,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <img style="width: 100px; padding-right: 10px;" src="{{asset('img/BUMA.png')}}"/>
                 <a class="navbar-brand" href="{{ url('/employees') }}">
                     BUMA Employee
                 </a>
