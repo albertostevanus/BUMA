@@ -2,13 +2,6 @@
 @section('content')
 <link href="{{ asset('css/employee.css') }}" rel="stylesheet">
 <script src="{{ asset('js/employee.js') }}" defer></script>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="full right">
-                <h2>Employee CRUD</h2>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
@@ -27,6 +20,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>E-mail</th>
+                        <th>Address</th>
                         <th>Role</th>
                     </tr>
                 </thead>
@@ -35,6 +30,8 @@
                     <tr>
                         <td>{{$employee->id}}</td>
                         <td>{{$employee->name}}</td>
+                        <td>{{$employee->email}}</td>
+                        <td>{{$employee->address}}</td>
                         <td>{{$employee->role}}</td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -60,6 +57,14 @@
 						<div class="form-group">
 							<label>Name</label>
 							<input type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+							<label>Email</label>
+							<input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+							<label>Address</label>
+							<textarea class="form-control" name="address" required></textarea>
 						</div>
 						<div class="form-group">
 							<label>Role</label>

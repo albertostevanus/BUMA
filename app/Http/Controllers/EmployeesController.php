@@ -26,6 +26,7 @@ class EmployeesController extends Controller
     public function create(Request $request)
     {
         \App\Employee::create($request->all());
+        return redirect('/employees');
     }
 
     /**
