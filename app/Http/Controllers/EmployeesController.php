@@ -26,7 +26,7 @@ class EmployeesController extends Controller
     public function create(Request $request)
     {
         \App\Employee::create($request->all());
-        return redirect('/employees');
+        return redirect('/employees')->with('add_sukses', 'Data successfully added');
     }
 
     /**
@@ -59,7 +59,8 @@ class EmployeesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = \App\Employee::find($id);
+        return view('employees/update',['employee' => $employee]);
     }
 
     /**
@@ -71,7 +72,9 @@ class EmployeesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employee = \App\Employee::find($id);
+        $employee->update($request->all());
+        return redirect('/employees')->with('add_sukses', 'Data successfully changed');
     }
 
     /**

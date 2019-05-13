@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('employees', 'EmployeesController');
 Route::post('/employee/create', 'EmployeesController@create');
+Route::get('/employee/{id}/edit', 'EmployeesController@edit');
+Route::post('/employee/{id}/update', 'EmployeesController@update');
